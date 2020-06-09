@@ -1,0 +1,9 @@
+<launch>
+<!-- Run this, only for evaluation of accuracy. Gazebo states are used to confirm pose estimates -->
+<!-- Ground truth related-->
+<!-- rosrun tf static_transform_publisher 0.15 0 0.12 -1.5709 0 0 ground_truth_udrone up_camera 1000-->
+<!-- rosrun tf static_transform_publisher 0 0 -0.2 0 0 -1.5709 ground_truth_heron ground_truth_marker 1000-->
+
+    <node pkg="tf" type="static_transform_publisher" name="udrone_to_up_camera" args="0.15 0 0.12 -1.5709 0 0 ground_truth_udrone up_camera 100" />
+    <node pkg="tf" type="static_transform_publisher" name="heron_to_marker" args="0 0 -0.2 0 0 -1.5709 ground_truth_heron ground_truth_marker 100" />
+</launch>
